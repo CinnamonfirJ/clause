@@ -1,0 +1,27 @@
+{
+  "name": "clause",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A refund layer for x402 machine payments on X Layer.",
+  "type": "module",
+  "workspaces": [
+    "packages/core",
+    "packages/contracts",
+    "packages/gateway",
+    "packages/web"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:chain": "node scripts/dev-chain.mjs",
+    "build": "npm run build -w @clause/web",
+    "start": "npm run start -w @clause/gateway",
+    "typecheck": "npm run typecheck -w @clause/core && npm run typecheck -w @clause/gateway && npm run typecheck -w @clause/web",
+    "vectors": "npm run vectors -w @clause/core",
+    "test": "npm run test -w @clause/core && npm run test -w @clause/contracts && npm run test -w @clause/gateway",
+    "test:e2e:chain": "node scripts/e2e-chain.mjs",
+    "agent": "npm run agent -w @clause/gateway --"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}

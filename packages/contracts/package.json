@@ -1,0 +1,23 @@
+{
+  "name": "@clause/contracts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ClauseEscrow — no owner, no upgradeability, no pause, no admin withdrawal.",
+  "scripts": {
+    "compile": "hardhat compile",
+    "pretest": "node --import tsx ../core/scripts/gen-vectors.ts",
+    "test": "hardhat test",
+    "node": "hardhat node",
+    "deploy:local": "hardhat run scripts/deploy.cjs --network localhost",
+    "deploy:xlayer": "hardhat run scripts/deploy.cjs --network xlayer",
+    "verify:processor": "hardhat run scripts/verify-processor.cjs"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.2",
+    "@nomicfoundation/hardhat-ethers": "^3.0.8",
+    "@openzeppelin/contracts": "5.0.2",
+    "chai": "^4.5.0",
+    "ethers": "^6.13.4",
+    "hardhat": "^2.22.17"
+  }
+}
